@@ -1,12 +1,12 @@
 <?php
 /**
- * Plugin Name: tisseurs-event-scheduler
- * Description: WordPress plugin to handle and scheduler events in Tisseurs de Chimeres association
+ * Plugin Name: tisseurs-events
+ * Description: WordPress plugin to handle events in Tisseurs de Chimeres association
  * Version: 0.1.0
  * Author: Bertrand Madet
  * Licence: GPLv3 or later
  * Licence URI: https://www.gnu.org/licenses/gpl-3.0.txt
- */
+*/
 
 // Sécurité
 defined('ABSPATH') or die('Accès interdit');

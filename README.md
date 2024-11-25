@@ -1,4 +1,4 @@
-This is tisseurs-event-scheduler WordPress plugin. This plugin aims to handle events in the association Tisseurs de Chimeres.
+This is tisseurs-events-wp-plugin, an WordPress plugin to handle events in the association Tisseurs de Chimeres.
 
 ## File structure
 

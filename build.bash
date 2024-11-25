@@ -3,11 +3,14 @@
 if [ ! -d dist ]; then
   mkdir dist
 fi
-rm -rf dist/tisseurs-event-scheduler.zip
+rm -rf dist/tisseurs-events-wp-plugin.zip
 workingdir=$(mktemp -d)
-mkdir ${workingdir}/tisseurs-event-scheduler
-cp -r src/* ${workingdir}/tisseurs-event-scheduler
+mkdir ${workingdir}/tisseurs-events-wp-plugin
+cp -r src/* ${workingdir}/tisseurs-events-wp-plugin
 currentdir=$(pwd)
 cd ${workingdir}
-zip -r tisseurs-event-scheduler.zip tisseurs-event-scheduler/*
-mv tisseurs-event-scheduler.zip ${currentdir}/dist
+zip -r tisseurs-events-wp-plugin.zip tisseurs-events-wp-plugin/*
+mv tisseurs-events-wp-plugin.zip ${currentdir}/dist
+cd ${currentdir}
+rm -rf ${workingdir}
+
