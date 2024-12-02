@@ -9,18 +9,29 @@
  
      You should have received a copy of the GNU General Public License along with tisseurs-events-wp-plugin. If not, see <https://www.gnu.org/licenses/>.
 */
+/**
+ * View to list rooms
+ *
+ * @package tisseurs-events-wp-plugin
+ * @since 0.1.0
+ */
+
+ use TisseursEventScheduler\Db;
 
 // Sécurité
 if (!defined('ABSPATH')) {
     exit;
 }
 
+global $wpdb;
+$myDb = new Db($wpdb);
+$tableName = $myDb->getRoomTableName();
+
 // Traitement de la suppression si demandée
 if (isset($_POST['action']) && $_POST['action'] === 'delete_room' && isset($_POST['room_id'])) {
     if (wp_verify_nonce($_POST['delete_room_nonce'], 'delete_room_' . $_POST['room_id'])) {
-        global $wpdb;
         $wpdb->delete(
-            $wpdb->prefix . 'rooms',
+            $tableName,
             ['id' => intval($_POST['room_id'])],
             ['%d']
         );
@@ -29,9 +40,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'delete_room' && isset($_POS
 }
 
 // Récupération des salles
-global $wpdb;
-$table_name = $wpdb->prefix . 'rooms';
-$rooms = $wpdb->get_results("SELECT * FROM $table_name ORDER BY name ASC");
+$rooms = $wpdb->get_results("SELECT * FROM $tableName ORDER BY name ASC");
 ?>
 
 <div class="wrap">

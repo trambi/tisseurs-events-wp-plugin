@@ -17,7 +17,12 @@
         "brain/monkey": "2.*"
     },
     "scripts": {
-        "test": "phpunit"
+        "test": "phpunit -c tests/php/phpunit.xml --display-deprecations"
+    },
+    "autoload": {
+        "psr-4": {
+            "TisseursEventScheduler\\":"./src/"
+        }
     }
     
 }
