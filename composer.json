@@ -17,7 +17,8 @@
         "brain/monkey": "2.*"
     },
     "scripts": {
-        "test": "phpunit -c tests/php/phpunit.xml --display-deprecations"
+        "test": "phpunit -c tests/php/phpunit.xml --display-deprecations",
+        "build": "bash build.bash"
     },
     "autoload": {
         "psr-4": {
