@@ -9,7 +9,7 @@
  * Licence URI: https://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-use TisseursEventsScheduler\Db;
+use TisseursEventScheduler\Db;
 
 // Sécurité
 defined('ABSPATH') or die('Accès interdit');
